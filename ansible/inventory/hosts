@@ -1,4 +1,0 @@
-all:
-  hosts:
-    gbanspractics:
-      192.168.40.195: #remotesrv
