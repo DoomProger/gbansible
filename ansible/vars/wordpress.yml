@@ -24,8 +24,8 @@ nginx_vhosts:
     extra_parameters: |
       location ~ \.php$ {
           fastcgi_split_path_info ^(.+\.php)(/.+)$;
-          fastcgi_pass unix:/var/run/php/php-fpm.sock;
-          #fastcgi_pass 127.0.0.1:9000;
+          #fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+          fastcgi_pass 127.0.0.1:9000;
           fastcgi_index index.php;
           fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
           include fastcgi_params;
@@ -42,7 +42,6 @@ php_upload_max_filesize: "256M"
 php_webserver_daemon: "nginx"
 php_enable_php_fpm: true
 php_fpm_state: started
-php_fpm_enabled_on_boot: true
 php_fpm_handler_state: restarted
 #-----
 php_packages:
