@@ -5,8 +5,8 @@
     - vars/wordpress.yml
     - vars/wordpress_vault.yml 
   roles:
-    - { role: geerlingguy.nginx, become: yes } 
-    - { role: geerlingguy.php, become: yes }
-    - { role: geerlingguy.mysql, become: yes }
-    - { role: wordpress, become: yes }
+    - { role: geerlingguy.nginx, tags: [nginx], become: yes } 
+    - { role: geerlingguy.php, tags: [php], become: yes }
+    - { role: geerlingguy.mysql,tags: [mysql], become: yes }
+    - { role: wordpress, tags: [wordpress, app], become: yes }
   
